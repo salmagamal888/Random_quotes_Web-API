@@ -1,0 +1,6 @@
+
+_ Any quote including the character {'} is not parsed properly.
+For eample it's ==> It\u2019s
+
+-I am not using a user db but a dummy user "my user" and a dummy password "pass"
+
