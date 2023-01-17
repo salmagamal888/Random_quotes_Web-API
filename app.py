@@ -6,7 +6,7 @@ Created on Fri Jan 13 09:33:27 2023
 """
 import random
 import pandas as pd
-from flask import Flask, request, make_response, jsonify
+from flask import Flask, request, make_response, jsonify, render_template
 import jwt
 from flask_sqlalchemy import SQLAlchemy
 from functools import wraps
@@ -15,19 +15,23 @@ from data_analysis_storage import  db, app, Quotes
 from decorators import Is_auth_route, token_required
 
 
-#MAX_QOUTE_LENGTH= json file extract
-
 
 @app.route("/")
 def index():
 
-    return "hello"
+    return render_template('index.html')
 
 
 @app.route("/qoutes")
+
 @Is_auth_route
-#@token_required
-def get_smth():
+def login():
+    
+    return 'congrats you are logged in please enter your token'
+
+@app.route("/qoutes/API")
+@token_required
+def random_quote():
     
     rid=random.randint(1,102)
     
@@ -41,19 +45,6 @@ def get_smth():
 
 if __name__ =="__main__":
     
-        
-    #from app import db
-    #db.init_app(app)
-    #with app.app_context():
-        #db.create_all()
-        
-        #add smth to db
-        #db.session.add(Qoutes(qoute="saba7 el 5eer", author="ana"))
-        #db.session.commit()
-        
-        #read
-        #r=Qoutes.query.all()
-
     
     app.run()
 
