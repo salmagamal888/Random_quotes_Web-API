@@ -4,3 +4,7 @@ For eample it's ==> It\u2019s
 
 -I am not using a user db but a dummy user "my user" and a dummy password "pass"
 
+-The quotes report will be overwritten on a dialy basis, we can make it more generalized
+
+
+

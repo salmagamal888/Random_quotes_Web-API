@@ -32,7 +32,6 @@ def token_required(f):
         
         token=request.args.get('token')
         if token==jwt.encode({'user':"my user"}, app.config['SECRET_KEY'], algorithm="HS256"):
-            #return jsonify({'token': token.decode('UTF-8')})
             return f(*args,**kwargs)
         else:
             return jsonify({'message':'"You are not authorized to use this API!"'}),403
