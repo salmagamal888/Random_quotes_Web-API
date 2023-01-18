@@ -6,5 +6,6 @@ For eample it's ==> It\u2019s
 
 -The quotes report will be overwritten on a dialy basis, we can make it more generalized
 
+_Securtiy. This is by no means secure
 
 
